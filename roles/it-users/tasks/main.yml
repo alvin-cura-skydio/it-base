@@ -1,0 +1,27 @@
+---
+- name: Enable sudo group without password
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: "^%sudo"
+    line: "%sudo   ALL=(ALL) NOPASSWD: ALL"
+    validate: "visudo -cf %s"
+  become: true
+
+- name: Alvin Cura
+  user:
+    name: alvincura
+    comment: Alvin Cura
+    shell: /bin/bash
+    groups: sudo
+    state: present
+
+- name: SSH Keys, Alvin Cura
+  authorized_key:
+    user: alvincura
+    state: present
+    key: '{{ item }}'
+  with_file:
+    - public-keys/alvincura-desktop
+    - public-keys/alvincura-laptop
+    - public-keys/alvinc-home-2020
