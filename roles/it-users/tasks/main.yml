@@ -25,3 +25,39 @@
     - public-keys/alvincura-desktop
     - public-keys/alvincura-laptop
     - public-keys/alvinc-home-2020
+
+
+- name: Thomas Tran
+  user:
+    name: thomas
+    comment: Thomas Tran
+    shell: /bin/bash
+    groups: sudo
+    state: present
+
+- name: SSH Keys, Thomas Tran
+  authorized_key:
+    user: alvincura
+    state: present
+    key: '{{ item }}'
+  with_file:
+    - public-keys/thomas-desktop
+
+
+- name: Ruby Martinez
+  user:
+    name: ruby
+    comment: Ruby Martinez
+    shell: /bin/bash
+    groups: sudo
+    state: present
+
+- name: SSH Keys, Ruby Martinez
+  authorized_key:
+    user: alvincura
+    state: present
+    key: '{{ item }}'
+  with_file:
+    - public-keys/ruby-laptop
+
+
