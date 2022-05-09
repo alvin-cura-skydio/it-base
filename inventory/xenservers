@@ -1,0 +1,7 @@
+[it_jammy_xen01]
+it-jammy-xen01		ansible_connection=ssh		ansible_user=alvincura	ansible_host=10.100.104.102
+
+[it_jammy_xen01:vars]
+
+[xenservers:children]
+it_jammy_xen01

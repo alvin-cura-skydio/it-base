@@ -1,26 +1,4 @@
-[jammy-maas]
+[xendomu]
 jammy-maas		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.222
-
-[jammy-maas:vars]
-
-[zabbix-01]
 zabbix-01		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.231
-
-[zabbix-01:vars]
-
-[zabbix-db-01]
 zabbix-db-01		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.241
-
-[zabbix-db-01:vars]
-
-
-[zabbix:children]
-zabbix-01
-
-[zabbix-db:children]
-zabbix-db-01
-
-[xendomu:children]
-jammy-maas
-zabbix
-zabbix-db
