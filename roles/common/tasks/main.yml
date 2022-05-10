@@ -12,3 +12,33 @@
     daemon_reload: yes
     state: restarted
 
+- name: Install prerequisite packages
+  apt:
+    name: 
+      - ntp
+      - linuxlogo
+    state: latest
+    install_recommends: yes
+    update_cache: yes
+  become: true
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Restart NTP service
+  ansible.builtin.systemd:
+    state: started
+    daemon_reload: yes
+    enabled: yes
+    masked: no
+    name: ntp
+  become: true
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Restart linuxlogo service
+  ansible.builtin.systemd:
+    state: started
+    daemon_reload: yes
+    enabled: yes
+    masked: no
+    name: linuxlogo
+  become: true
+  when: ansible_distribution == 'Ubuntu'
