@@ -2,3 +2,4 @@
 jammy-maas		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.222
 zabbix-01		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.231
 zabbix-db-01		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.241
+maas-db-02		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.251
