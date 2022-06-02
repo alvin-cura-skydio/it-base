@@ -1,0 +1,35 @@
+---
+- name: Install ntp prerequisite
+  apt:
+    name: ntp
+    state: latest
+    update_cache: yes
+  become: true
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Restart NTP services
+  ansible.builtin.systemd:
+    state: started
+    daemon_reload: yes
+    enabled: yes
+    masked: no
+    name: ntp
+  become: true
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Install Xen Hypervisor
+  apt:
+    name:
+      - xen-hypervisor-amd64
+      - xen-tools
+      - bridge-utils
+      - openvswitch-switch
+      - virt-manager
+      - libvirt-daemon-driver-xen
+      - libvirt-daemon-driver-storage-zfs
+    state: latest
+    install_recommends: yes
+    update_cache: yes
+  become: true
+  when: ansible_distribution == 'Ubuntu'
+

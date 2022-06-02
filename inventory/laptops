@@ -1,0 +1,2 @@
+[precision_5560]
+snighdhabommadevara-laptop	ansible_connection=ssh	ansible_user=it	ansible_host=10.100.25.133
