@@ -14,7 +14,9 @@
     comment: Alvin Cura
     shell: /bin/bash
     groups: sudo
+    append: yes
     state: present
+    password: "$6$VtgzxXKF$A3DHeWSsZwBWPrKM/a.96cfehDJqYJSHax4hjQz9VzY8deTrmLz6iDvuXKNmqU0LCtQoTs3BV/b6ycIaiPu9N0"
 
 - name: SSH Keys, Alvin Cura
   authorized_key:
@@ -32,8 +34,9 @@
     name: thomas
     comment: Thomas Tran
     shell: /bin/bash
-    groups: sudo
-    state: present
+    groups: nogroup
+    state: absent
+    remove: yes
 
 - name: SSH Keys, Thomas Tran
   authorized_key:
@@ -42,6 +45,8 @@
     key: '{{ item }}'
   with_file:
     - public-keys/thomas-desktop
+  tags:
+    - never
 
 
 - name: Ruby Martinez
@@ -50,6 +55,7 @@
     comment: Ruby Martinez
     shell: /bin/bash
     groups: sudo
+    append: yes
     state: present
 
 - name: SSH Keys, Ruby Martinez
