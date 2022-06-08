@@ -1,7 +1,9 @@
 [xendomu]
 xenial-cubic		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.206
+bionic-cubic		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.208
 maas-02			ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.222
 maas-db-02		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.251
 zabbix-01		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.231
 zabbix-db-01		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.241
 observium		ansible_connection=ssh		ansible_user=root	ansible_host=10.100.104.236
+bionic-test		ansible_connection=ssh		ansible_user=root
