@@ -1,2 +1,3 @@
 [precision_5560]
 snighdhabommadevara-laptop	ansible_connection=ssh	ansible_user=it	ansible_host=10.100.25.133
+taylormitcham-lt-5560		ansible_connection=ssh	ansible_user=taylormitcham	ansible_host=10.100.26.247

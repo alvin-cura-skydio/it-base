@@ -40,8 +40,8 @@
 
 - name: SSH Keys, Thomas Tran
   authorized_key:
-    user: alvincura
-    state: present
+    user: thomas
+    state: absent
     key: '{{ item }}'
   with_file:
     - public-keys/thomas-desktop
